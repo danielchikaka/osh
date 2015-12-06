@@ -1,0 +1,21 @@
+/**
+     * ----------------------------------------------------------------
+     * Styling for All IE 
+     * ----------------------------------------------------------------
+*/
+#discussions-publications-social-wrapper .discussions-publications-social ul#socials li a {
+  line-height: 20px;
+  position: relative;
+  padding-left: 0px; }
+
+  #discussions-publications-social-wrapper .discussions-publications-social ul#socials li .symbol {
+display: none;
+}
+
+
+		#discussions-publications-social-wrapper .discussions-publications-social ul#socials li a:hover {
+		  text-decoration: underline;
+		  -webkit-transition: all 0.3s ease-out;
+		  -moz-transition: all 0.3s ease-out;
+		  -o-transition: all 0.3s ease-out;
+		  transition: all 0.3s ease-out; }

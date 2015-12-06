@@ -1,0 +1,27 @@
+
+nav.navbar{
+	position: relative;
+}
+
+.admin-badge{
+	position: absolute;
+	right: 20px;
+    top: 15px;
+}
+.admin-badge a{
+	color: #fff;
+}
+
+.skin-blue .sidebar-menu>li.header {
+    color: #f7f7f7;
+    background: #1a2226;
+    text-align: center;
+}
+
+.box-no-line{
+	border-top: 0px ;
+}
+
+td.delete-btn  form{
+    display: inline-block;
+}
