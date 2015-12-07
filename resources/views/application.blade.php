@@ -79,7 +79,13 @@
           </div>
               <div class="info  admin-badge">
               <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
-              <a href="#" class="red"><i class="fa fa-power-off text-failed"></i> Logout ({{Auth::user()->name}})</a>
+                @if (Auth::guest())
+
+          @else
+
+                        <a href="{{ url('/auth/logout') }}" class="red"><i class="fa fa-power-off text-failed"></i> Logout ({{Auth::user()->name}})</a>
+          @endif
+  
             </div>
         </nav>
       </header>
