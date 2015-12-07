@@ -1,35 +1,24 @@
-@extends ('layouts.site.news')
-
+ @extends('layouts.site.lay-right')
 @section('title')
-{{label('lbl_news')}}
-@stop 
+<section id="title-wrapper">
+    <div class="container" id="title-wrap-inner">
+        <h1>{{trans('messages.lbl_bio')}}</h1>
+    </div><!--/container title-wrap-inner-->
+</section>
+@stop
 
-@section('news')
-      
-  <div class="news-wrapper">
+@section('content')
+
+<div class="bio-page">
+
+<img src="{{$biographies->photo_url}}" alt=""  width="300px"  height="340px">
+<p>{{$biographies->fullname}}</p>
+<p><strong>{{$biographies->{trans('messages.title')} }}</strong></p>
     
-    <div class="news-thumb-title">
-
-      <h2>{{ $news->{langdb('title')} }}</h2>
-      
-        @if($news->photo_url)
-          <img src="{{ URL::to($news->photo_url) }}" class="no-margin" alt="">
-        @endif
-
-        <div class="news-content-wrapper">
-          <p>{{ $news->{langdb('content')} }}</p>
-        </div> <!--/news-content-wrapper-->
-
-      <div class="news-date-single">
-        <p>Posted on {{ date("d<\s\u\p>S</\s\u\p> F, Y ", strtotime($news->created_at)) }}</p>
-      </div><!--/news-date-single-->
+</div><!--/bio-page-->
 
 
-  
-    </div><!--/news-thumb-title-->
+   {!! $biographies->{trans('messages.content')} !!}
 
 
-    </div> <!--/news-wrapper-->
-
-@stop                            
-       
+@stop

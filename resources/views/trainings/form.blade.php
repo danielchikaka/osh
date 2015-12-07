@@ -103,6 +103,18 @@
         CKEDITOR.replace('content_sw');
       });
 </script>
+    <script src="{{ asset('admin/plugins/summernote/summernote.min.js') }}"></script>
+ 
+ <script>
+     $(document).ready(function() {
+      $('.ck_text').summernote({
+        // height: 300,                 // set editor height
+
+  minHeight: 300,             // set minimum height of editor
+  maxHeight: null,             // set maximum height of editor
+      });
+    });
+ </script>
 
 @stop
 

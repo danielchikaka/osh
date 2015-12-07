@@ -132,7 +132,7 @@ class PublicationsCategoriesController extends Controller {
 	{
 		$category = PublicationCategory::find($id);
 		$category->delete();	
-		return Redirect::route('publication-categories.admin');	
+		return Redirect::route('publications-categories.admin');	
 	}
 	/**
 	 * Show the form for editing the specified resource.

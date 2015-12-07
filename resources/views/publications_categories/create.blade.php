@@ -5,8 +5,6 @@
       <h3 class="box-title">Publications Categories</h3>
     </div><!-- /.box-header -->
     <div class="box-body">
-        <!-- text input -->
-
 
 			{!!  Form::open(array('route' => 'publications-categories.store','role'=>'form')) !!}
 

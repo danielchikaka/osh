@@ -4,6 +4,7 @@
 @stop
 @section('page_header')
   <!-- Content Header (Page header) -->
+
   <section class="content-header">
     <h1>
       Blank page
@@ -14,6 +15,7 @@
       <li class="active">Contact</li>
     </ol>
   </section>
+
 @stop
 
 @section('content')

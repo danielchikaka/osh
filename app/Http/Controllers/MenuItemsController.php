@@ -29,6 +29,7 @@ class MenuItemsController extends Controller {
 		return View('menuitems.index');
 	}
 
+
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -40,6 +41,12 @@ class MenuItemsController extends Controller {
 		MenuItem::create($data);
 		return Redirect('menuitems');
 	}
+
+
+
+
+
+
 
 	/**
 	 * Remove the specified resource from storage.
@@ -76,8 +83,14 @@ class MenuItemsController extends Controller {
 			$data['position']=$position;
 			MenuItem::where('id',$mnuDAta['menu-item-db-id'][$key])->update($data);
 		}
+
 		return Redirect('menuitems');
 	}
+
+
+
+
+	
 
 
 	public function items(){

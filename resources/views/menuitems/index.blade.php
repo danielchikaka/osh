@@ -12,19 +12,8 @@
 
 
 @stop
-@section('page_header')
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <h1>
-      Blank page
-      <small>it all starts here</small>
-    </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Menu items List</li>
-    </ol>
-  </section>
-@stop
+
+
 
 @section('content')
 
@@ -83,8 +72,6 @@
 
   </div><!-- /.box -->
 
-
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -117,8 +104,8 @@
     <script src="{{asset('admin/ajremove.js')}}"></script>
     <script src="{{asset('admin/plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('admin/plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
-	<script src="{!! asset('admin/jquery.nestable.js') !!}"></script>
-	<script src="{!! asset('admin/movable_menu.js') !!}"></script>
+  <script src="{!! asset('admin/jquery.nestable.js') !!}"></script>
+  <script src="{!! asset('admin/movable_menu.js') !!}"></script>
     <script src="{{ asset('admin/menu.js') }}"></script>
 
   <script type="text/javascript">
@@ -141,7 +128,6 @@
     });
 
 </script>
-
 
 @stop
 

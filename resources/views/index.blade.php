@@ -18,7 +18,7 @@
     <div class="cycle-next"><i class="icon-slider icon-angle-right"></i></div>
 
       @foreach($images as $image)
-      <img   class="lazy"  height="450px" data-original="{{URL::to($image->imageURL())}}" data-cycle-title="{{ $image->{trans('messages.title')} }}" data-cycle-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beautiful cat">
+      <img   class="lazy"  height="450px" data-original="{{URL::to($image->imageURL())}}" data-cycle-desc="{{ $image->{trans('messages.title')} }}">
       @endforeach
   </div><!--/cycle-slideshow-->
 

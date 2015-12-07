@@ -96,6 +96,7 @@ Route::controllers([
 	Route::get('menuitems/publish/{slug}',['as'=>'menuitems.publish','uses'=>'MenuItemsController@publish']);
 	Route::post('ajax-update',['as'=>'menuitems.ajaxupdate','uses'=>'MenuItemsController@menu_update']);
 	Route::get('menuitems-links',['as'=>'menuitems.items','uses'=>'MenuItemsController@items']);
+	// Route::get('menuitems-links',['as'=>'menuitems.items','uses'=>'MenuItemsController@items']);
 
 
 
@@ -110,6 +111,7 @@ Route::controllers([
 
 	Route::resource('biographies','BiographiesController');
 	Route::post('biographies/${id}/photo',['as'=>'biographies.img-edit','uses'=>'BiographiesController@editPhoto']);
+	Route::get('admin-biography',['as'=>'biographies.admin','uses'=>'BiographiesController@admin']);
 
 	Route::resource('pages','PagesController');
 	Route::get('admin-pages',['as'=>'admin.pages','uses'=>'PagesController@admin']);

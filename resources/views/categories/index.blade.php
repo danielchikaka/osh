@@ -14,7 +14,6 @@
       <li class="active">Categories List</li>
     </ol>
   </section>
-@stop
 
 @section('content')
 

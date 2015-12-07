@@ -4,6 +4,7 @@
 	 <meta charset="utf-8">
 	 <title>Occupational Safety and Health Authority </title>
           <link rel="stylesheet" href="{{asset('site/css/master.css')}}">
+          <link rel="stylesheet" href="{{asset('site/css/overrider.css')}}">
           <!--[if IE]>
           <link rel="stylesheet" href="{{asset('site/css/ie.css')}}">
         <![endif]-->
@@ -28,7 +29,7 @@
                <ul>
                       
                         <li><a href="{{URL::route('faqs.index')}}">{{trans('messages.lbl_faq_short')}}</a></li>
-                        <li><a href="{{URL::route('vacancies.index')}}">Vacancies</a></li>
+                        <li><a href="{{URL::route('vacancies.index')}}">{{trans('messages.lbl_vacancies')}}</a></li>
                         <li><a href="#">Register Workplace</a></li>
                         <li><a href="#">Report Complaints</a></li>
                         <li><a href="{{URL::route('contact.contact-us')}}">{{trans('messages.lbl_contact_us')}}</a></li>

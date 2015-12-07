@@ -10,6 +10,7 @@
                				<span>Usalama na Afya huongeza uzalishaji</span>',
 		'lbl_continue'  =>  'Endelea',
 		'lbl_news'  	=>  'Habari',
+		'lbl_bio'  	=>  'Wasifu',
 		'lbl_latest_news'  	=>  'Habari Mpya',
 		'lbl_publications'  	=>  'Machapisho',
 		'lbl_posted'  	=>  'Imetumwa',
@@ -44,7 +45,6 @@
 		'lbl_having_complaints_btn'=>'tupatie taarifa sasa',
 		'lbl_social_media_title'=>'Mitandao ya Kijamii',
 		'lbl_videos'=>'Video',
-		
 
 
 

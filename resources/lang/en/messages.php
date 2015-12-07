@@ -7,6 +7,7 @@
 
 		'lbl_continue'  =>  'Continue',
 		'lbl_news'  =>  'News',
+		'lbl_bio'  =>  'Biography',
 		'lbl_latest_news'  	=>  'Latest News',
 		'lbl_publications'  	=>  'Publications',
 		'lbl_posted'  	=>  'Posted on',
@@ -41,8 +42,6 @@
 		'lbl_having_complaints_btn'=>'talk to us now',
 		'lbl_social_media_title'=>'Social Media',
 		'lbl_videos'=>'Videos',
-
-
 
 		
 

@@ -14,6 +14,7 @@
       <li class="active">Categories List</li>
     </ol>
   </section>
+
 @stop
 
 @section('content')
@@ -40,7 +41,7 @@
                       @foreach($categories as $category)
                         <tr>
                           <td>{{$category->title_en}}</td>
-                          <td><a href="{{URL::route('publications-categories.edit',$category->slug)}}"><i class="fa fa-fw fa-edit"></i></a>  <a href="{{URL::route('publications-categories.publish',$category->slug)}}"><i class="fa fa-fw fa-toggle-{{($category->is_published)?'on green':'off grey'}}"></i></a> <a data-method="DELETE" data-confirm="Confirm Delete?" href="{{URL::route('publications-categories.destroy',$category->slug)}}"><i class="fa fa-fw fa-remove"></i></a></td>
+                          <td><a href="{{URL::route('publications-categories.edit',$category->slug)}}"><i class="fa fa-fw fa-edit"></i></a>  <a href="{{URL::route('publications-categories.publish',$category->slug)}}"><i class="fa fa-fw fa-toggle-{{($category->is_published)?'on green':'off grey'}}"></i></a> <a data-method="DELETE" data-confirm="Confirm Delete?" href="{{URL::route('publications-categories.destroy',$category->id)}}"><i class="fa fa-fw fa-remove"></i></a></td>
                         </tr>
                       @endforeach
                     </tbody>
@@ -56,6 +57,7 @@
   </div><!-- /.box -->
 @stop
 @section('js')
+ <script src="{{asset('admin/ajremove.js')}}"></script>
     <script src="{{asset('admin/plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('admin/plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
 

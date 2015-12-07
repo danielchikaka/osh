@@ -15,6 +15,7 @@
       <li class="active">Blank page</li>
     </ol>
   </section>
+
 @stop
 
 @section('content')
