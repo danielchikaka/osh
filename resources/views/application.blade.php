@@ -66,7 +66,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>OSHA</b></span>
           <!-- logo for regular state and mobile devices -->
-          <!-- <span class="logo-lg"><b>OSHA</b>CMS</span> -->
+          <span class="logo-lg"><b>OSHA</b>CMS</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -102,6 +102,7 @@
                 <li><a href="{{URL::route('faqs.admin')}}"><i class="fa fa-circle-o"></i>FAQs</a></li>
                 <li><a href="{{URL::route('vacancies.admin')}}"><i class="fa fa-circle-o"></i>Vacancies</a></li>
                 <li><a href="{{URL::route('trainings.admin')}}"><i class="fa fa-circle-o"></i>Trainings</a></li>
+                <!-- <li><a href="{{URL::route('biographies.admin')}}"><i class="fa fa-circle-o"></i>Biography</a></li> -->
               </ul>
             </li>            
 

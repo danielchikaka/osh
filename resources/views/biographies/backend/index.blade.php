@@ -1,77 +1,66 @@
-@extends('layouts.admin.application')
+@extends('application')
+@section('css')
+    <link rel="stylesheet" href="{{asset('admin/croppic.css')}}">
+@stop
+@section('page_header')
+  <!-- Content Header (Page header) -->
+
+@stop
 
 @section('content')
 
-<div class="row">
-
-	<div class="large-12 medium-12 small-12 columns">
 
 
-	@if($news->count() != 0)
 
-		<div class="large-12 medium-12 small-12 columns">
-			<div class="page-title">
-				<a href="{{ URL::route('news.create')}}"><i class="add-icon"></i></a>
-				News
-			</div>
-		</div>
+  <!-- Default box -->
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="box-title">biographies</h3>
+ <a href="{{URL::route('biographies.create')}}"><i class="fa fa-fw fa-plus"></i></a>     
 
-		@foreach($news as $n)
+    </div>
+    <div class="box-body">
+        <table id="datatable" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th width="30%">Title</th>
+              <th>Category</th>
+              <th >Summary</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($bios as $page)
+              <tr>
+                <td>{{$page->title_en}}</td>
+                <td>{{$page->category->title_en}}</td>
+                <td >{{$page->summary_en}}</td>
+                <td><a href="{{URL::route('biographies.edit',$page->id)}}"><i class="fa fa-fw fa-edit"></i></a>  <a href="{{URL::route('biographies.publish',$page->id)}}"><i class="fa fa-fw fa-toggle-{{($page->is_published)?'on green':'off grey'}}"></i></a> <a data-method="DELETE" data-confirm="Confirm Delete?" href="{{URL::route('biographies.destroy',$page->id)}}"><i class="fa fa-fw fa-remove"></i></td>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
+    </div><!-- /.box-body -->
 
-			<ul class="posts">
-				<li>
+  </div><!-- /.box -->
+@stop
+@section('js')
+    <script src="{{asset('admin/ajremove.js')}}"></script>
 
-					<div class="row">
-						<div class="large-2 columns">
-							<div class="post_meta">
-								<div class="post_date">
-									<span class="month">{{ date('d', strtotime($n->created_at)) }}</span><br />
-									{{ date('M Y', strtotime($n->created_at)) }}<br />
-								</div>
-								<!-- .post_date ends -->
-								{{ link_to_route('news.edit', "Edit", array($n->id)) }} |
-								{{ link_to_route('news.destroy', "Delete", array($n->id), array('data-method' => 'delete', 'data-confirm' => 'Are you Sure' ,'class' => 'delete')) }}
-								
-							</div>
-							<!-- .post_metaedns -->
-						</div>
+    <script src="{{asset('admin/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('admin/plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
 
-						<div class="large-2 columns">
-							<div class="post_img">
-								@if($n->thum_url)
-									<img src="{{ URL::to($n->thumb_url) }}">
-								@endif
-							</div>
-						</div>
-
-						<div class="large-8 columns">
-							<h3>{{ link_to_route('news.show', $n->title_en, array($n->slug) ) }}</h3>
-							<div class="post">{{ Str::limit($n->summary_en, 160) }}</div>
-						</div>
-					</div>
-
-				</li>
-			</ul>
-		@endforeach
-
-		@else
-
-			<div class="empty-content">
-				<i class="fa fa-save"></i>
-				<h4> <strong>No any news posted yet please click the button below to create one</strong> </h4>
-				
-					<a href="{{ URL::route('news.create') }}">Add New</a>
-				
-			</div>
-
-		@endif
-
-
-				
-	</div>
-
-</div>
-
-{{ $news->links() }}
-
+      <script>
+      $(function () {
+          // $("#example2").DataTable();
+        $('#datatable').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": true,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+      });
+    </script> 
 @stop

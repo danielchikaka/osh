@@ -19,6 +19,15 @@ class BiographiesController extends Controller {
 		$this->middleware('auth',['except'=>['show']]);
 	}
 
+
+	public function admin()
+	{
+		$bios = Biography::orderBy('created_at','DESC')->get();
+		return view('biographies.backend.index',compact('bios'));
+	}
+
+
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -73,8 +82,11 @@ class BiographiesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($slug)
 	{
+
+		$biographies = Biography::findBySlug($slug);
+        return view('biographies.show',compact('biographies'));	
 	}
 
 	/**

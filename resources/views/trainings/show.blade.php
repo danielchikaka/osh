@@ -19,7 +19,7 @@
 	  	<li><a href="#">Apply Now</a></li>
 	  </ul>
 
-	  <h4>{{trans('messages.lbl_training_desc')}}: </h4>
+
 			{!! $training->{trans('messages.content')} !!}
 	  	
 	  </div><!--/news-all-->

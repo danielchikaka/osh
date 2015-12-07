@@ -7,6 +7,7 @@
 
 		'lbl_continue'  =>  'Continue',
 		'lbl_news'  =>  'News',
+		'lbl_bio'  =>  'Biography',
 		'lbl_latest_news'  	=>  'Latest News',
 		'lbl_publications'  	=>  'Publications',
 		'lbl_posted'  	=>  'Posted on',

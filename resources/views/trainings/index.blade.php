@@ -31,7 +31,7 @@
 
         </div>
 
-          <a href="{{URL::route('vacancies.show',$training->slug)}}">{{ trans('messages.lbl_continue') }}  &rarr; </a>
+          <a href="{{URL::route('trainings.show',$training->slug)}}">{{ trans('messages.lbl_continue') }}  &rarr; </a>
 
 
       </div><!--/single-news-all-->     
