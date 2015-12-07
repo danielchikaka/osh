@@ -68,16 +68,7 @@
 
 
 @section('js')
-<!-- CK Editor -->
-<script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
-<script>
-      $(function () {
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
-        CKEDITOR.replace('content_en');
-        CKEDITOR.replace('content_sw');
-      });
-</script>
+
     <script src="{{ asset('admin/plugins/summernote/summernote.min.js') }}"></script>
  
  <script>

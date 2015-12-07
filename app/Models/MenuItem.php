@@ -138,7 +138,7 @@ public static function  menuitems($par=0,$name='main'){
 				   	}
 				   	else{
 
-					$mnu .= "<a href= ".url($child->url).">".$child->$title."</a>";
+					$mnu .= "<li><a href= ".url($child->url).">".$child->$title."</a></li>";
 				   		
 				   	}
 
