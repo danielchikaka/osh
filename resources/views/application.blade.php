@@ -109,7 +109,7 @@
                 <li><a href="{{URL::route('faqs.admin')}}"><i class="fa fa-circle-o"></i>FAQs</a></li>
                 <li><a href="{{URL::route('vacancies.admin')}}"><i class="fa fa-circle-o"></i>Vacancies</a></li>
                 <li><a href="{{URL::route('trainings.admin')}}"><i class="fa fa-circle-o"></i>Trainings</a></li>
-                <!-- <li><a href="{{URL::route('biographies.admin')}}"><i class="fa fa-circle-o"></i>Biography</a></li> -->
+                <li><a href="{{URL::route('tenders.admin')}}"><i class="fa fa-circle-o"></i>Tenders</a></li>
               </ul>
             </li>            
 

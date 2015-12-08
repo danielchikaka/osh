@@ -136,9 +136,9 @@ class TendersController extends Controller {
 	public function edit($id)
 	{
 		
-		$pub= Tender::find($id);
+		$tender= Tender::find($id);
 		
-		return view('tenders.edit',compact('pub','categories'));
+		return view('tenders.edit',compact('pub','categories', 'tender'));
 
 	}
 

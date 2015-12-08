@@ -3,17 +3,7 @@
     <link rel="stylesheet" href="{{asset('admin/croppic.css')}}">
 @stop
 @section('page_header')
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <h1>
-      Blank page
-      <small>it all starts here</small>
-    </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Tenders List</li>
-    </ol>
-  </section>
+
 @stop
 
 @section('content')
@@ -21,6 +11,7 @@
   <div class="box">
     <div class="box-header with-border">
       <h3 class="box-title">Tenders</h3>
+       <a href="{{URL::route('tenders.create')}}"><i class="fa fa-fw fa-plus"></i></a>     
     </div>
     <div class="box-body">
 <table id="datatable" class="table table-bordered table-striped">
@@ -38,7 +29,7 @@
                           <td>{{$tender->title_en}}</td>
                           <td ><a href="{{URL::to($tender->file_en) }}">{{$tender->title_en}}</a></td>
                           <td ><a href="{{URL::to($tender->file_sw)}}">{{$tender->title_sw}}</a></td>
-                          <td><a href="{{URL::route('publications.edit',$tender->id)}}"><i class="fa fa-fw fa-edit"></i></a>  <a href="{{URL::route('publications.publish',$tender->id)}}"><i class="fa fa-fw fa-toggle-{{($tender->is_published)?'on green':'off grey'}}"></i></a> <a data-method="DELETE" data-confirm="Confirm Delete?" href="{{URL::route('publications.destroy',$tender->id)}}"><i class="fa fa-fw fa-remove"></i></a></td>
+                          <td><a href="{{URL::route('tenders.edit',$tender->id)}}"><i class="fa fa-fw fa-edit"></i></a>  <a href="{{URL::route('tenders.publish',$tender->id)}}"><i class="fa fa-fw fa-toggle-{{($tender->is_published)?'on green':'off grey'}}"></i></a> <a data-method="DELETE" data-confirm="Confirm Delete?" href="{{URL::route('tenders.destroy',$tender->id)}}"><i class="fa fa-fw fa-remove"></i></a></td>
                         </tr>
                       @endforeach
                     </tbody>

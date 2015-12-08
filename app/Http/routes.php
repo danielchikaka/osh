@@ -23,10 +23,6 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-/**
-	
-
-*/
 	Route::resource('publications','PublicationsController');
 	Route::get('admin-publications',['as'=>'publications.admin','uses'=>'PublicationsController@admin']);
 	Route::get('publications-publish/{slug}',['as'=>'publications.publish','uses'=>'PublicationsController@publish']);

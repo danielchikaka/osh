@@ -4,16 +4,7 @@
 @stop
 @section('page_header')
   <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <h1>
-      Blank page
-      <small>it all starts here</small>
-    </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Trainings List</li>
-    </ol>
-  </section>
+
 @stop
 
 @section('content')
@@ -31,7 +22,7 @@
                 <table id="datatable" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>#</th>
+            
                         <th>Training Title</th>
                         <th width="8%">Actions</th>
                       </tr>
@@ -39,7 +30,7 @@
                     <tbody>
                       @foreach($trainings as $t)
                         <tr>
-                          <td></td>
+        
                           <td>{{$t->title_en}}</td>
                           <td><a href="{{URL::route('trainings.edit',$t->slug)}}"><i class="fa fa-fw fa-edit"></i></a>  <a href="{{URL::route('trainings.publish',$t->slug)}}"><i class="fa fa-fw fa-toggle-{{($t->is_published)?'on green':'off grey'}}"></i></a> <a data-method="DELETE" data-confirm="Confirm Delete?" href="{{URL::route('trainings.destroy',$t->slug)}}"><i class="fa fa-fw fa-remove"></i></a></td>
                         </tr>
