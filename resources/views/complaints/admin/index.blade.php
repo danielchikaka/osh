@@ -15,8 +15,10 @@
   <!-- Default box -->
   <div class="box">
     <div class="box-header with-border">
-      <h3 class="box-title">Press Releases</h3>
-   <a href="{{URL::route('pressreleases.create')}}"><i class="fa fa-fw fa-plus"></i></a>     
+      <h3 class="box-title"> Register Workplace</h3>
+      @if(count($workplaces) == 0)
+   <a href="{{URL::route('workplaces.create')}}"><i class="fa fa-fw fa-plus"></i></a>     
+   @endif
 
     </div>
     <div class="box-body">
@@ -24,18 +26,14 @@
                     <thead>
                       <tr>
                         <th>Title</th>
-                        <th >File En</th>
-                        <th >File Sw</th>
                         <th width="8%">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($pressreleases as $press)
+                      @foreach($workplaces as $press)
                         <tr>
                           <td>{{$press->title_en}}</td>
-                          <td ><a href="{{URL::to($press->file_en) }}">{{$press->title_en}}</a></td>
-                          <td ><a href="{{URL::to($press->file_sw)}}">{{$press->title_sw}}</a></td>
-                          <td><a href="{{URL::route('pressreleases.edit',$press->id)}}"><i class="fa fa-fw fa-edit"></i></a>  <a href="{{URL::route('pressreleases.publish',$press->id)}}"><i class="fa fa-fw fa-toggle-{{($press->is_published)?'on green':'off grey'}}"></i></a> <a data-method="DELETE" data-confirm="Confirm Delete?" href="{{URL::route('pressreleases.destroy',$press->id)}}"><i class="fa fa-fw fa-remove"></i></a></td>
+                          <td><a href="{{URL::route('workplaces.edit',$press->id)}}"><i class="fa fa-fw fa-edit"></i></a>  <a href="{{URL::route('workplaces.publish',$press->id)}}"><i class="fa fa-fw fa-toggle-{{($press->is_published)?'on green':'off grey'}}"></i></a> <a data-method="DELETE" data-confirm="Confirm Delete?" href="{{URL::route('workplaces.destroy',$press->id)}}"><i class="fa fa-fw fa-remove"></i></a></td>
                         </tr>
                       @endforeach
                     </tbody>

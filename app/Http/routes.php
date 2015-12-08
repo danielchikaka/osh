@@ -60,6 +60,26 @@ Route::controllers([
 	Route::get('pressreleases/publish/{slug}',['as'=>'pressreleases.publish','uses'=>'PressReleasesController@publish']);
 	
 
+	Route::resource('workplaces','WorkplacesController');
+	Route::get('admin-workplaces',['as'=>'workplaces.admin','uses'=>'WorkplacesController@admin']);
+	Route::get('workplaces/publish/{slug}',['as'=>'workplaces.publish','uses'=>'WorkplacesController@publish']);
+
+
+	Route::resource('privaces','PrivaciesController');
+	Route::get('admin-privaces',['as'=>'privacies.admin','uses'=>'PrivaciesController@admin']);
+	Route::get('privaces/publish/{slug}',['as'=>'privaces.publish','uses'=>'PrivaciesController@publish']);
+
+
+	Route::resource('disclamers','DisclamersController');
+	Route::get('admin-disclamers',['as'=>'disclamers.admin','uses'=>'DisclamersController@admin']);
+	Route::get('disclamers/publish/{slug}',['as'=>'disclamers.publish','uses'=>'DisclamersController@publish']);
+
+
+		Route::resource('complaints','ComplaintsController');
+	Route::get('admin-complaints',['as'=>'complaints.admin','uses'=>'ComplaintsController@admin']);
+	Route::get('complaints/publish/{slug}',['as'=>'complaints.publish','uses'=>'ComplaintsController@publish']);
+
+
 	Route::resource('faqs','FaqController');
 	Route::get('admin-faqs',['as'=>'faqs.admin','uses'=>'FaqController@admin']);
 	Route::get('faqs/publish/{slug}',['as'=>'faqs.publish','uses'=>'FaqController@publish']);

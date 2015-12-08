@@ -2,12 +2,12 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\PressRelease;
+use App\Models\Workplace;
 use Redirect;
 use Validator;
 use Illuminate\Http\Request;
 
-class PressReleasesController extends Controller {
+class WorkplacesController extends Controller {
 		/**
 	 * Create a new controller instance.
 	 *
@@ -25,8 +25,8 @@ class PressReleasesController extends Controller {
 	 */
 	public function index()
 	{
-		$pressreleases = PressRelease::orderBy('created_at','DESC')->paginate(15);
-		return view('pressreleases.index',compact('pressreleases'));
+		$workplace = Workplace::all();
+		return view('workplaces.index',compact('workplace'));
 	}	
 
 	/**
@@ -36,8 +36,8 @@ class PressReleasesController extends Controller {
 	 */
 	public function admin()
 	{
-		$pressreleases = PressRelease::orderBy('created_at','DESC')->get();
-		return view('pressreleases.admin.index',compact('pressreleases'));
+		$workplaces = Workplace::all();
+		return view('workplaces.admin.index',compact('workplaces'));
 	}
 
 	/**
@@ -48,7 +48,7 @@ class PressReleasesController extends Controller {
 	public function create()
 	{
 
-		return view('pressreleases.create');
+		return view('workplaces.create');
 	}
 
 	/**
@@ -59,7 +59,7 @@ class PressReleasesController extends Controller {
 	public function store(Request $request)
 	{
 		$formdata = $request->all();
-		$validator = Validator::make($formdata, PressRelease::$rules);
+		$validator = Validator::make($formdata, Workplace::$rules);
 
 		if ($validator->fails())
 		{
@@ -113,8 +113,8 @@ class PressReleasesController extends Controller {
 
 		// $formdata['user_id'] = Auth->user()->id;
 
-		PressRelease::create($formdata);
-		return Redirect::route('pressreleases.admin');
+		Workplace::create($formdata);
+		return Redirect::route('workplaces.admin');
 	}
 
 	/**
@@ -137,8 +137,8 @@ class PressReleasesController extends Controller {
 	public function edit($id)
 	{
 		
-		$press= PressRelease::find($id);
-		return view('pressreleases.edit',compact('press'));
+		$press= Workplace::find($id);
+		return view('workplaces.edit',compact('press'));
 
 	}
 
@@ -153,17 +153,17 @@ class PressReleasesController extends Controller {
 		
 
 		$formdata = $request->all();
-		PressRelease::$rules['file_en']='mimes:pdf';
-		PressRelease::$rules['file_sw']='mimes:pdf';
+		Workplace::$rules['file_en']='mimes:pdf';
+		Workplace::$rules['file_sw']='mimes:pdf';
 
-		$validator = Validator::make($formdata,PressRelease::$rules);
+		$validator = Validator::make($formdata,Workplace::$rules);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 		
-		$press = PressRelease::find($id);
+		$press = Workplace::find($id);
 		
 
 		//en
@@ -228,7 +228,7 @@ class PressReleasesController extends Controller {
 			unset($formdata['file_sw']);
 		}
 		$press->update($formdata);
-		return Redirect::route('pressreleases.admin');
+		return Redirect::route('workplaces.admin');
 
 
 	}
@@ -241,7 +241,7 @@ class PressReleasesController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$press = PressRelease::find($id);
+		$press = Workplace::find($id);
 		
     	$f = public_path().$press->file_en;
     	if(file_exists($f) && is_file($f)){
@@ -254,7 +254,7 @@ class PressReleasesController extends Controller {
     	}
 
 		$press->delete();
-		return Redirect::route('pressreleases.admin');
+		return Redirect::route('workplaces.admin');
 
 	}
 	/**
@@ -265,9 +265,9 @@ class PressReleasesController extends Controller {
 	 */
 	public function publish($id)
 	{
-		$press = PressRelease::find($id);
+		$press = Workplace::find($id);
 		$press->update(['is_published'=>($press->is_published)?0:1]);
-		return Redirect::route('pressreleases.admin');
+		return Redirect::route('workplaces.admin');
 
 	}
 }

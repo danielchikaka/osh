@@ -23,7 +23,7 @@
 <div class="col-md-4">
 <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">PUblications Types</h3>
+                  <h3 class="box-title">Publications Types</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     @foreach($publication_categories as $category)

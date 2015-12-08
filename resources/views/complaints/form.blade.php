@@ -11,41 +11,38 @@
         	{!! Form::text('title_sw',null,['class'=>'form-control','placeholder'=>'Enter Title in Swahili']) !!}
     			<span class='error'>{{ $errors->first('title_sw') }}</span>
         </div>
-            
-        <div class="form-group">
-          {!! Form::label('summary_en','Summary in English') !!}
-          {!! Form::textarea('summary_en',null,['class'=>'form-control','placeholder'=>'Enter Summary in English']) !!}
-          <span class='error'>{{ $errors->first('summary_en') }}</span>
-        </div>          
 
-        <div class="form-group">
-          {!! Form::label('summary_sw','Summary in Swahili') !!}
-          {!! Form::textarea('summary_sw',null,['class'=>'form-control','placeholder'=>'Enter Summary in Swahili']) !!}
-          <span class='error'>{{ $errors->first('summary_sw') }}</span>
-        </div>  
- 
-    		<div class="box box-info">
-      		<div class="box-body pad">
+
+                <div class="box box-info">
+          <div class="box-body pad">
             {!! Form::label('content_en','Body in English') !!}
             {!! Form::textarea('content_en',null,['class'=>'form-control ck_text']) !!}
             <span class='error'>{{ $errors->first('content_en') }}</span>
-      		</div>
-    		</div><!-- /.box -->   
-		     
-		<div class="box box-info">
-  		<div class="box-body pad">
+          </div>
+        </div><!-- /.box -->   
+         
+    <div class="box box-info">
+      <div class="box-body pad">
         {!! Form::label('content_sw','Body in Swahili') !!}
-  			{!! Form::textarea('content_sw',null,['class'=>'form-control ck_text']) !!}
+        {!! Form::textarea('content_sw',null,['class'=>'form-control ck_text']) !!}
         <span class='error'>{{ $errors->first('content_sw') }}</span>
 
 
-  		</div>
-		</div><!-- /.box -->
+      </div>
+    </div><!-- /.box -->
+
     <div class="form-group">
-    	{!! Form::label('filename','News filename') !!}
-    	{!! Form::file('filename',null,['class'=>'form-control']) !!}
-			<span class='error'>{{ $errors->first('filename') }}</span>
+      {!! Form::label('file_en','English File') !!}
+      {!! Form::file('file_en',null,['class'=>'form-control']) !!}
+      <span class='error'>{{ $errors->first('file_en') }}</span>
+    </div>    
+
+    <div class="form-group">
+      {!! Form::label('file_sw','Swahili File') !!}
+      {!! Form::file('file_sw',null,['class'=>'form-control']) !!}
+      <span class='error'>{{ $errors->first('file_en') }}</span>
     </div>
+
 
         <!-- radio -->
         <div class="form-group">

@@ -110,6 +110,11 @@
                 <li><a href="{{URL::route('vacancies.admin')}}"><i class="fa fa-circle-o"></i>Vacancies</a></li>
                 <li><a href="{{URL::route('trainings.admin')}}"><i class="fa fa-circle-o"></i>Trainings</a></li>
                 <li><a href="{{URL::route('tenders.admin')}}"><i class="fa fa-circle-o"></i>Tenders</a></li>
+                <li><a href="{{URL::route('pressreleases.admin')}}"><i class="fa fa-circle-o"></i>Press Releases</a></li>
+                <li><a href="{{URL::route('workplaces.admin')}}"><i class="fa fa-circle-o"></i>Register Workplace</a></li>
+                <li><a href="{{URL::route('privacies.admin')}}"><i class="fa fa-circle-o"></i>Privacy Policy</a></li>
+                <li><a href="{{URL::route('disclamers.admin')}}"><i class="fa fa-circle-o"></i>Disclamer</a></li>
+                <li><a href="{{URL::route('biographies.admin')}}"><i class="fa fa-circle-o"></i>Biography</a></li>
               </ul>
             </li>            
 
