@@ -80,10 +80,10 @@
 
         <div id="developer">
               <ul>
-                <li><a href="#">Disclamer</a></li>
-                <li><a href="#">Privacy and Policy</a></li>
+                <li><a href="{{URL::route('disclamers.index')}}">Disclamer</a></li>
+                <li><a href="{{URL::route('privaces.index')}}">Privacy and Policy</a></li>
                 <li><a href="{{URL::route('faqs.index')}}">{{trans('messages.lbl_faq_short')}}</a></li>
-                <li><a href="#">Sitemap</a></li>
+
               </ul>
         </div>
 </section>

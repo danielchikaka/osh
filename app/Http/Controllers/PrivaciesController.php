@@ -25,8 +25,8 @@ class PrivaciesController extends Controller {
 	 */
 	public function index()
 	{
-		$privaces = Privacy::all();
-		return view('privaces.index',compact('privaces'));
+		$workplaces = Privacy::take(1)->get();
+		return view('privaces.index',compact('workplaces'));
 	}	
 
 	/**

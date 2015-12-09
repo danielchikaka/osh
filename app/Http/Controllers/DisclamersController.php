@@ -25,9 +25,10 @@ class DisclamersController extends Controller {
 	 */
 	public function index()
 	{
-		$disclamers = Disclamer::all();
-		return view('disclamers.index',compact('disclamers'));
+		$workplaces = Disclamer::take(1)->get();
+		return view('disclamers.index',compact('workplaces'));
 	}	
+	
 
 	/**
 	 * Display a listing of the resource.
