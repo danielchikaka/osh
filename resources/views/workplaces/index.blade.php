@@ -1,33 +1,32 @@
- @extends('layouts.site.lay-right')
+ @extends('layouts.site.right-sidebar')
+        @foreach($workplaces as $press)
+        
 @section('title')
 <section id="title-wrapper">
     <div class="container" id="title-wrap-inner">
-        <h1>{{ trans('messages.lbl_press')}}</h1>
+        <h1>    
+                      {{ $press->{trans('messages.title')} }}
+           </h1>
     </div><!--/container title-wrap-inner-->
 </section>
 @stop
 
 @section('content')
-    <div id="news-all"  class="tenders">
+
+    @if($press->is_published == 1)
 
 
-        @foreach($pressreleases as $press)
 
-            <div class="single-news-all">
-        
-              <p><a href="{{URL::to($press->{trans('messages.file')} )}}">
-              <img src="{{asset('site/images/pdf.png')}}" alt="">
-              {{ $press->{trans('messages.title')} }}</a>  - <small>{{trans('messages.lbl_posted')}} {{ date('M d , Y', strtotime($press->created_at)) }} </small></p>
 
-            </div><!--/single-news-all-->       
+              {!! $press->{trans('messages.content')} !!}
 
-            <hr>
-        @endforeach
-            <div id="pagination">
-                <nav>
-                    {!! $pressreleases->render() !!}
-                </nav>
-            </div>
 
-    </div><!--/news-all-->
+
+
+    <br> <a href="{{ $press->{trans('messages.file')} }}">     {{ (Session::get('locale')=='en')?'Download Form':'Chukua Form'}}</a>
+
+    @endif
+
+
 @stop
+        @endforeach

@@ -73,7 +73,7 @@
          <li>
                <h4  ><a href="{{URL::route('trainings.show',$training->slug)}}">{{$training->{trans('messages.title')} }}</a></h4>
                <span class="pull-left">{{trans('messages.lbl_start')}}: {{ date('M d , Y', strtotime($training->created_at)) }}</span>
-               <span class="pull-right"><a href="#">{{trans('messages.lbl_apply')}}</a></span>
+
 
          </li>
       @endforeach
@@ -90,7 +90,7 @@
        
        
        <div class="home-register-workplace">
-      <a href="#" class="btn btn-primary  btn-report">register workplace</a>
+      <a href="{{URL::route('workplaces.index')}}" class="btn btn-primary  btn-report">{{ (Session::get('locale')=='en')?'register workplace':'sajili ofisi'}}</a>
 </div><!-- /home-register-workplace-->
 
 </div><!--/home-time-table-->
@@ -98,7 +98,7 @@
 
 
 <div class="home-mini-sidebar">
-        <h3 class="h3">Recent Documents</h3>
+        <h3 class="h3">{{ (Session::get('locale')=='en')?'Recent Documents':'Machapisho Mapya'}}</h3>
 <hr>
 
         <ul  class="home-docs">

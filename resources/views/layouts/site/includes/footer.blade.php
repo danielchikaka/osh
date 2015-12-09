@@ -18,7 +18,7 @@
 </div><!--/report-title-->
 
 <div class="report-button">
-       <a href="#" class="btn btn-primary  btn-report">{{trans('messages.lbl_having_complaints_btn')}}</a>
+       <a href="{{URL::route('complaints.index')}}" class="btn btn-primary  btn-report">{{trans('messages.lbl_having_complaints_btn')}}</a>
 </div><!--/report-button-->
 
 

@@ -25,8 +25,8 @@ class WorkplacesController extends Controller {
 	 */
 	public function index()
 	{
-		$workplace = Workplace::all();
-		return view('workplaces.index',compact('workplace'));
+		$workplaces = Workplace::take(1)->get();
+		return view('workplaces.index',compact('workplaces'));
 	}	
 
 	/**
