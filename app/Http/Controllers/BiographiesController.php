@@ -22,8 +22,11 @@ class BiographiesController extends Controller {
 
 	public function admin()
 	{
-		$bios = Biography::orderBy('created_at','DESC')->get();
-		return view('biographies.backend.index',compact('bios'));
+		$bios = Biography::orderBy('created_at','DESC')->first();
+		if(!file_exists(public_path().'/'.$bios->photo_url)){
+			$bios->photo_url=url('/admin/img/person.png');
+		}
+		return view('biographies.index',compact('bios'));
 	}
 
 
@@ -73,7 +76,7 @@ class BiographiesController extends Controller {
 		$biography->fill($data);
 		$biography->save();
 
-		return Redirect::route('biographies.index');
+		return Redirect::route('biographies.admin');
 	}
 
 	/**
@@ -123,105 +126,25 @@ class BiographiesController extends Controller {
 	}
 
 	public function editPhoto($id,Request $request){
-		$biography =  Biography::findOrFail($id);
+		$biography =  Biography::find($id);
 		if(file_exists(public_path().$biography->photo_url) && is_file(public_path().$biography->photo_url)){
 			unlink(public_path().$biography->photo_url);
 		}
 
-/*		echo '{
-				"status":"success",
-				"url":"path/croppedImg.jpg"
-			}
-			';*/
 
-		/*
-		*	!!! THIS IS JUST AN EXAMPLE !!!, PLEASE USE ImageMagick or some other quality image processing libraries
-		*/
-		$imgUrl =$request->imgUrl;
-		// original sizes
-		$imgInitW =$request->imgInitW;
-		$imgInitH =$request->imgInitH;
-		// resized sizes
-		$imgW =$request->imgW;
-		$imgH =$request->imgH;
-		// offsets
-		$imgY1 =$request->imgY1;
-		$imgX1 =$request->imgX1;
-		// crop box
-		$cropW =$request->cropW;
-		$cropH =$request->cropH;
-		// rotation angle
-		$angle =$request->rotation;
-
-		$jpeg_quality = 100;
+		$imgUrl =$request->photo_url;
 
 		$fname = rand().time();
-		$output_filename = public_path().'/uploads/bio/bio_'.$fname;
+		$output_filename = public_path().'/uploads/bio/bio_'.$fname.'.png';
 
-		// uncomment line below to save the cropped image in the same location as the original image.
-		//$output_filename = dirname($imgUrl). "/croppedImg_".rand();
-
-		$what = getimagesize($imgUrl);
-
-		switch(strtolower($what['mime']))
-		{
-		    case 'image/png':
-		        $img_r = imagecreatefrompng($imgUrl);
-				$source_image = imagecreatefrompng($imgUrl);
-				$type = '.png';
-		        break;
-		    case 'image/jpeg':
-		        $img_r = imagecreatefromjpeg($imgUrl);
-				$source_image = imagecreatefromjpeg($imgUrl);
-				error_log("jpg");
-				$type = '.jpeg';
-		        break;
-		    case 'image/gif':
-		        $img_r = imagecreatefromgif($imgUrl);
-				$source_image = imagecreatefromgif($imgUrl);
-				$type = '.gif';
-		        break;
-		    default: die('image type not supported');
-		}
-		$fname = '/uploads/bio/bio_'.$fname.$type;
+	    $ifp = fopen($output_filename, "wb"); 
+	    $data = explode(',', $imgUrl);
+	    fwrite($ifp, base64_decode($data[1])); 
+	    fclose($ifp); 
+		$fname = '/uploads/bio/bio_'.$fname.'.png';
 		$biography->update(['photo_url'=>$fname]);
-		//Check write Access to Directory
 
-		if(!is_writable(dirname($output_filename))){
-			$response = Array(
-			    "status" => 'error',
-			    "message" => 'Can`t write cropped File'
-		    );	
-		}else{
-
-		    // resize the original image to size of editor
-		    $resizedImage = imagecreatetruecolor($imgW, $imgH);
-			imagecopyresampled($resizedImage, $source_image, 0, 0, 0, 0, $imgW, $imgH, $imgInitW, $imgInitH);
-		    // rotate the rezized image
-		    $rotated_image = imagerotate($resizedImage, -$angle, 0);
-		    // find new width & height of rotated image
-		    $rotated_width = imagesx($rotated_image);
-		    $rotated_height = imagesy($rotated_image);
-		    // diff between rotated & original sizes
-		    $dx = $rotated_width - $imgW;
-		    $dy = $rotated_height - $imgH;
-		    // crop rotated image to fit into original rezized rectangle
-			$cropped_rotated_image = imagecreatetruecolor($imgW, $imgH);
-			imagecolortransparent($cropped_rotated_image, imagecolorallocate($cropped_rotated_image, 0, 0, 0));
-			imagecopyresampled($cropped_rotated_image, $rotated_image, 0, 0, $dx / 2, $dy / 2, $imgW, $imgH, $imgW, $imgH);
-			// crop image into selected area
-			$final_image = imagecreatetruecolor($cropW, $cropH);
-			imagecolortransparent($final_image, imagecolorallocate($final_image, 0, 0, 0));
-			imagecopyresampled($final_image, $cropped_rotated_image, 0, 0, $imgX1, $imgY1, $cropW, $cropH, $cropW, $cropH);
-			// finally output png image
-			//imagepng($final_image, $output_filename.$type, $png_quality);
-			imagejpeg($final_image, $output_filename.$type, $jpeg_quality);
-			$response = Array(
-			    "status" => 'success',
-			    "url" => url($fname)
-		    );
-		}
-		print json_encode($response);
+	
 
 
 	}

@@ -126,7 +126,7 @@ Route::controllers([
 
 
 	Route::resource('biographies','BiographiesController');
-	Route::post('biographies/${id}/photo',['as'=>'biographies.img-edit','uses'=>'BiographiesController@editPhoto']);
+	Route::post('biographies/{id}/photo',['as'=>'biographies.img-edit','uses'=>'BiographiesController@editPhoto']);
 	Route::get('admin-biography',['as'=>'biographies.admin','uses'=>'BiographiesController@admin']);
 
 	Route::resource('pages','PagesController');
