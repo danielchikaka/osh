@@ -107,6 +107,7 @@ class ContactController extends Controller {
 				);
 
 			Mail::send('contact.contactus.show', $formdata, function($email) use ($formdata){
+				$email->from($formdata['email'], $formdata['name']);
 				$email->to($formdata['receiver'])->subject($formdata['subject']);
 			});
 		}
