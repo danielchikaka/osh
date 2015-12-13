@@ -5,16 +5,7 @@
 @section('page_header')
   <!-- Content Header (Page header) -->
 
-  <section class="content-header">
-    <h1>
-      Blank page
-      <small>it all starts here</small>
-    </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Contact</li>
-    </ol>
-  </section>
+
 
 @stop
 
@@ -27,6 +18,17 @@
   <div class="box">
     <div class="box-header with-border">
       <h3 class="box-title">Contacts Details</h3>
+            @if(count($contact) == 0)
+   <a href="{{URL::route('contact.create')}}"><i class="fa fa-fw fa-plus"></i></a>     
+   @else
+
+             
+             
+                          <a href="{{URL::route('contact.edit',$contact->id)}}"><i class="fa fa-fw fa-edit"></i></a>  |  <a data-method="DELETE" data-confirm="Confirm Delete?" href="{{URL::route('contact.destroy',$contact->id)}}"><i class="fa fa-fw fa-remove"></i></a>
+                   
+@endif
+
+
     </div>
     <div class="box-body">
   @if($contact)
@@ -60,7 +62,7 @@
                         </tr>   
                         <tr>
                           <td>Organization Region</td>
-                          <td>{{$contact->fax}}</td>
+                          <td>{{$contact->region}}</td>
                         </tr>                    
                     </tbody>
                   </table>
@@ -85,5 +87,21 @@
 
 @stop
 @section('js')
+
+    <script src="{{asset('admin/ajremove.js')}}"></script>
+
+      <script>
+      $(function () {
+          // $("#example2").DataTable();
+        $('#datatable').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": true,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+      });
+    </script> 
 
 @stop

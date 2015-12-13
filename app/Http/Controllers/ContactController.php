@@ -107,7 +107,7 @@ class ContactController extends Controller {
 				);
 
 			Mail::send('contact.contactus.show', $formdata, function($email) use ($formdata){
-				$email->to($formdata['email'])->subject($formdata['subject']);
+				$email->to($formdata['receiver'])->subject($formdata['subject']);
 			});
 		}
 		return view('contact.contactus.success');
@@ -133,7 +133,8 @@ class ContactController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+			$press= Contact::find($id);
+		return view('contact.edit',compact('press'));
 	}
 
 	/**
@@ -142,9 +143,28 @@ class ContactController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id,Request $request)
 	{
-		//
+		
+
+		$formdata = $request->all();
+
+
+		$validator = Validator::make($formdata,Contact::$rules);
+
+		if ($validator->fails())
+		{
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+		
+		$press = Contact::find($id);
+		
+
+
+		$press->update($formdata);
+		return Redirect::route('contact.index');
+
+
 	}
 
 	/**
@@ -155,7 +175,12 @@ class ContactController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$press = Contact::find($id);
+
+
+		$press->delete();
+		return Redirect::route('contact.index');
+
 	}
 
 }
