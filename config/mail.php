@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-	'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+	'host' => 'sandboxbbac537d54a34df5bd641df49428301d.mailgun.org',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
 	|
 	*/
 
-	'port' => env('MAIL_PORT', 465),
+	'port' => 587,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,8 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+
+	'from' => array('address' => 'postmaster@sandbox1701ebfa6415454ebbc200d9b06bbdc9.mailgun.org', 'name' => 'mailgun'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +81,8 @@ return [
 	|
 	*/
 
-	'username' => 'oshagotz@gmail.com',
+	'username' => null,
+	// 'username' => 'oshagotz@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +95,8 @@ return [
 	|
 	*/
 
-	'password' => '2015Osha@osha.com',
+	'password' => null,
+	// 'password' => '2015Osha@osha.com',
 
 	/*
 	|--------------------------------------------------------------------------
