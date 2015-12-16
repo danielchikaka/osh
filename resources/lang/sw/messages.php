@@ -6,7 +6,7 @@
 	[
 
 		//Labels Translations
-		'lbl_site' 	=>	'<small>Jamhuri ya Muungano wa Tanzania</small> <br> Occupational Safety and Health Authority <br> 
+		'lbl_site' 	=>	'<small>Jamhuri ya Muungano wa Tanzania</small> <br> Wakala wa Usalama na Afya Mahali pa Kazi <br> 
                				<span>Usalama na Afya huongeza uzalishaji</span>',
 		'lbl_continue'  =>  'Endelea',
 		'lbl_news'  	=>  'Habari',

@@ -28,9 +28,8 @@ class Video extends Model implements SluggableInterface {
 	public static $rules = [
         'title_en' => 'required',
         'title_sw' => 'required',
-		'content_en' => 'required',
-		'content_sw' => 'required'
+        'url'=>'required',
 	];
-	protected $fillable = ['title_en','title_sw','content_en','content_sw','user_id','is_published','slug','url'];
+	protected $fillable = ['title_en','title_sw','user_id','is_published','slug','url'];
 
 }

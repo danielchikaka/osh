@@ -3,6 +3,7 @@
       <h3 class="box-title">Videos</h3>
     </div><!-- /.box-header -->
     <div class="box-body">
+
         <div class="form-group">
           {!! Form::label('title_en','Video title in English') !!}
           {!! Form::text('title_en',null,['class'=>'form-control','placeholder'=>'Enter Video title in English']) !!}
