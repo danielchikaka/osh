@@ -2,7 +2,7 @@
   return [
 
 		//Labels Translations
-		'lbl_site' 	=>	'<small>United Republic of Tanzania</small> <br> Occupational Safety and Health Authority <br> 
+		'lbl_site' 	=>	'<small>The United Republic of Tanzania</small> <br> Occupational Safety and Health Authority <br> 
                <span>Safety and Health increase productivity</span>',
 
 		'lbl_continue'  =>  'Continue',

@@ -22,8 +22,11 @@ class Gallery extends Model implements SluggableInterface {
     	return $this->hasMany('App\Models\Media');
     }
 
+
+
     public static function slide($n=5){
-    	$gal = Gallery::find(3);
+    	$gal = Gallery::where('title_en', '=', 'slider')->where('slug','=','slider')->first();
+             // dd($gal);
         if(!$gal)
             return [];
     	return  $gal->media()->orderBy('created_at','DESC')->limit($n)->get();

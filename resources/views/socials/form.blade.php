@@ -1,25 +1,29 @@
-<div class="box box-warning">
-    <div class="box-header with-border">
-      <h3 class="box-title">Categories</h3>
-    </div><!-- /.box-header -->
+
     <div class="box-body">
         <div class="form-group">
-          {!! Form::label('facebook','Facebook') !!}
+          {!! Form::label('facebook','Facebook Url') !!}
           {!! Form::text('facebook',null,['class'=>'form-control','placeholder'=>'Enter Facebook']) !!}
           <span class='error'>{{ $errors->first('facebook') }}</span>
         </div>  
 
         <div class="form-group">
-          {!! Form::label('twitter','Facebook Address') !!}
-          {!! Form::text('twitter',null,['class'=>'form-control','placeholder'=>'Enter Facebook Address']) !!}
+          {!! Form::label('twitter','Twitter  Url') !!}
+          {!! Form::text('twitter',null,['class'=>'form-control','placeholder'=>'Enter Facebook  Url']) !!}
           <span class='error'>{{ $errors->first('twitter') }}</span>
         </div>
 
 
         <div class="form-group">
-          {!! Form::label('youtube','Youtube Address') !!}
-          {!! Form::text('youtube',null,['class'=>'form-control','placeholder'=>'Enter Youtube Address']) !!}
+          {!! Form::label('youtube','Youtube  Url') !!}
+          {!! Form::text('youtube',null,['class'=>'form-control','placeholder'=>'Enter Youtube  Url']) !!}
           <span class='error'>{{ $errors->first('youtube') }}</span>
+        </div>
+
+
+        <div class="form-group">
+          {!! Form::label('youtube','Blog Url') !!}
+          {!! Form::text('blogger',null,['class'=>'form-control','placeholder'=>'Enter Blog  Url']) !!}
+          <span class='error'>{{ $errors->first('blogger') }}</span>
         </div>
 
 
@@ -42,7 +46,7 @@
         </div>
 
     </div><!-- /.box-body -->
-  </div><!-- /.box -->
+
 
 {!! Form::submit($button, array('class' => 'tiny button')) !!}
 

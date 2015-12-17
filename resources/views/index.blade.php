@@ -9,6 +9,7 @@
         data-cycle-caption-plugin="caption2" 
         data-cycle-carousel-visible="1" 
          data-cycle-pager="#pager" 
+           data-cycle-pause-on-hover="true"
         data-cycle-carousel-fluid="true" >
                         
             <!-- <div class="cycle-pager"></div> -->

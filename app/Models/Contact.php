@@ -20,4 +20,7 @@ class Contact extends Model {
 	protected $fillable = ['physical_en', 'physical_sw', 'box_no_en', 'box_no_sw', 'phone_no', 'user_id','region','fax','is_published','email','org_name_en','org_name_sw'];
 
 
+
+
 }
+
