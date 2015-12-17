@@ -1,6 +1,7 @@
 @extends('application')
 @section('css')
     <link rel="stylesheet" href="{{asset('admin/croppic.css')}}">
+    <link rel="stylesheet" href="{{asset('site/bower_components/mediaelement/build/mediaelementplayer.min.css')}}">
 @stop
 @section('page_header')
   <!-- Content Header (Page header) -->
@@ -21,8 +22,8 @@
                     <thead>
                       <tr>
                         <th>Video</th>
-                        <th width="30%">English</th>
-                        <th width="30%">Swahili</th>
+                        <th width="60%">Title</th>
+               
                         <th width="8%">Actions</th>
                       </tr>
                     </thead>
@@ -37,7 +38,7 @@
                           </video>
                         </td>
                           <td>{{$video->title_en}}</td>
-                          <td>{{$video->title_sw}}</td>
+                   
                           <td><a href="{{URL::route('videos.edit',$video->id)}}"><i class="fa fa-fw fa-edit"></i></a>  <a href="{{URL::route('videos.publish',$video->id)}}"><i class="fa fa-fw fa-toggle-{{($video->is_published)?'on green':'off grey'}}"></i></a> <a data-method="DELETE" data-confirm="Confirm Delete?" href="{{URL::route('videos.destroy',$video->id)}}"><i class="fa fa-fw fa-remove"></i></a></td>
                         </tr>
 
@@ -52,6 +53,7 @@
     <script src="{{asset('admin/ajremove.js')}}"></script>
     <script src="{{asset('admin/plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('admin/plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
+    <script src="{{asset('site/bower_components/mediaelement/build/mediaelement-and-player.min.js')}}"></script>
 
       <script>
       $(function () {
@@ -66,4 +68,8 @@
         });
       });
     </script> 
+
+    <script>
+    $('video,audio').mediaelementplayer();
+    </script>
 @stop

@@ -97,7 +97,7 @@ class MenuItemsController extends Controller {
 
 		$pages_categories = Category::all();
 		$publication_categories = PublicationCategory::all();
-		$modules =  ['tenders','trainings','news','faqs','videos','media'];
+		$modules =  ['tenders','trainings','news','faqs','videos','galleries'];
 		return view('menuitems.items',compact('pages_categories','publication_categories','modules'));
 
 	}

@@ -116,6 +116,7 @@
                 <li><a href="{{URL::route('disclamers.admin')}}"><i class="fa fa-circle-o"></i>Disclamer</a></li>
                 <li><a href="{{URL::route('biographies.admin')}}"><i class="fa fa-circle-o"></i>Biography</a></li>
                 <li><a href="{{URL::route('contact.index')}}"><i class="fa fa-circle-o"></i>Contacts</a></li>
+                <li><a href="{{URL::route('socials.index')}}"><i class="fa fa-circle-o"></i>Social Media</a></li>
               </ul>
             </li>            
 

@@ -96,9 +96,9 @@ class VideosController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($slug)
+	public function update($id,Request $request)
 	{
-		$video =Video::find($slug);
+		$video =Video::find($id);
 		
 		$data = $request->all();
 		$validator = Validator::make($data,Video::$rules);

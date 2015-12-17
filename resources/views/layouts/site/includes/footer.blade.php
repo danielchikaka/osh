@@ -34,8 +34,8 @@
 
     <?php $contact = App\Models\Contact::first();  ?>
       <p>
+          {{ (Session::get('locale')=='en')?'OCCUPATIONAL SAFETY AND HEALTH AUTHORITY':'WAKALA WA USALAMA NA AFYA MAHALI PA KAZI'}},<br>
     @if($contact)
-      {{$contact->{trans('messages.org_name')} }}, <br>
       {{$contact->{trans('messages.physical')} }}, <br>
       {{$contact->{trans('messages.box_no')} }}, <br>
       {{$contact->region}} <br>
@@ -49,7 +49,8 @@
         <h4>{{trans('messages.lbl_related')}}</h4>
         <ul>
           @foreach(App\Models\RelatedLink::latest() as $rel)
-            <li><a href="{{$rel->url}}"  target="_blank">{{$rel->{trans('messages.title')} }}</a></li>
+            <li><a href="http://{{$rel->url}}"  target="_blank">{{$rel->{trans('messages.title')} }}</a></li>
+
           @endforeach
         </ul>
     </div> <!--/related-links-->
@@ -60,9 +61,10 @@
         <h4>{{trans('messages.lbl_social_media_title')}}</h4>
         <?php $socials = json_decode(File::get(app_path().'/'.'socials.json'));  ?>
         <ul>
-          <li><a href="{{url($socials->facebook)}}"><i class="icon-facebook"></i></a></li>
-          <li><a href="{{$socials->twitter}}"><i class="icon-twitter"></i></a></li>
-          <li><a href="{{$socials->youtube}}"><i class="icon-youtube"></i></a></li>
+          <li><a href="{{url($socials->facebook)}}"  target="_blank"><i class="icon-facebook"></i></a></li>
+          <li><a href="{{url($socials->twitter)}}"  target="_blank"><i class="icon-twitter"></i></a></li>
+          <li><a href="{{url($socials->youtube)}}"  target="_blank"><i class="icon-youtube"></i></a></li>
+          <li><a href="{{url($socials->blogger)}}"  target="_blank"><i class="icon-blogger"></i></a></li>
         </ul>
          
     </div> <!--/social-media-->
@@ -80,6 +82,7 @@
 
         <div id="developer">
               <ul>
+                <li><a href="https://mail.osha.go.tz/"  target="_blank">{{ (Session::get('locale')=='en')?' Staff Email':'Staff Email'}}</a></li>
                 <li><a href="{{URL::route('disclamers.index')}}">Disclamer</a></li>
                 <li><a href="{{URL::route('privaces.index')}}">Privacy and Policy</a></li>
                 <li><a href="{{URL::route('faqs.index')}}">{{trans('messages.lbl_faq_short')}}</a></li>
