@@ -7,9 +7,11 @@
 	"require": {
 		"laravel/framework": "5.0.*",
         "laravelcollective/html": "5.0",
-		"cviebrock/eloquent-sluggable": "^3.0",
+		"cviebrock/eloquent-sluggable": "^3.0",	
+		"guzzlehttp/guzzle": "5.0",
 		"intervention/image": "^2.3",
 		"intervention/imagecache": "^2.3"
+
 
 	},
 	"require-dev": {

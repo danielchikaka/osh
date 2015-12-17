@@ -15,7 +15,7 @@ return [
 	|
 	*/
 
-	'driver' => env('MAIL_DRIVER', 'smtp'),
+	'driver' => env('MAIL_DRIVER', 'mailgun'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-	'host' => 'sandboxbbac537d54a34df5bd641df49428301d.mailgun.org',
+	'host' => 'smtp.mailgun.org',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ return [
 	*/
 
 
-	'from' => array('address' => 'postmaster@sandbox1701ebfa6415454ebbc200d9b06bbdc9.mailgun.org', 'name' => 'mailgun'),
+	'from' => array('address' => 'postmaster@sandbox6461ec0ae60b46728d14292eeb4e2cd4.mailgun.org', 'name' => 'mailgun'),
 
 	/*
 	|--------------------------------------------------------------------------
