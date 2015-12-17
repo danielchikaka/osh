@@ -20,6 +20,10 @@
 
 require __DIR__.'/../bootstrap/autoload.php';
 
+
+$app->bind('path.public', function() {
+	 return  __DIR__;
+});
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
