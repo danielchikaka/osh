@@ -27,14 +27,16 @@
 
         <div class="form-group">
           {!! Form::label('start_date','Start Date: ') !!}
-          {!! Form::text('start_date',null,['class'=>'form-control']) !!}
+          {!! Form::text('start_date',null,['class'=>'form-control datepicker','placeholder'=>'Start Date']) !!}
+      
           <span class='error'>{{ $errors->first('start_date') }}</span>
         </div>
         <div class="form-group">
           {!! Form::label('end_date','End Date: ') !!}
-          {!! Form::text('end_date',null,['class'=>'form-control']) !!}
+          {!! Form::text('end_date',null,['class'=>'form-control datepicker' ,'placeholder'=>'End Date']) !!}
           <span class='error'>{{ $errors->first('end_date') }}</span>
         </div>
+
 
 
         <div class="form-group">
@@ -51,7 +53,7 @@
         
       <div class="box box-info">
         <div class="box-body pad">
-          {!! Form::label('content_en','Position Description in English') !!}
+          {!! Form::label('content_en','Training Description in English') !!}
           {!! Form::textarea('content_en',null,['class'=>'form-control ck_text']) !!}
           <span class='error'>{{ $errors->first('content_en') }}</span>
 
@@ -61,7 +63,7 @@
 
       <div class="box box-info">
         <div class="box-body pad">
-          {!! Form::label('content_sw','Position Description in Swahili') !!}
+          {!! Form::label('content_sw','Training Description in Swahili') !!}
           {!! Form::textarea('content_sw',null,['class'=>'form-control ck_text']) !!}
           <span class='error'>{{ $errors->first('content_sw') }}</span>
 
@@ -95,6 +97,8 @@
 @section('js')
 
     <script src="{{ asset('admin/plugins/summernote/summernote.min.js') }}"></script>
+
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
  
  <script>
      $(document).ready(function() {
@@ -106,6 +110,16 @@
       });
     });
  </script>
+
+
+ <script type="text/javascript">
+  $(function() {
+    $( ".datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
+  });
+  </script>
 
 @stop
 

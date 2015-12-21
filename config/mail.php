@@ -55,7 +55,7 @@ return [
 	*/
 
 
-	'from' => array('address' => 'postmaster@sandbox6461ec0ae60b46728d14292eeb4e2cd4.mailgun.org', 'name' => 'mailgun'),
+	'from' => array('address' => 'lagask@live.com', 'name' => 'mailgun'),
 
 	/*
 	|--------------------------------------------------------------------------

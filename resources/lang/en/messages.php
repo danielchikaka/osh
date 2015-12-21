@@ -29,7 +29,7 @@
 		'lbl_vacancies' => 'Vacancies',
 		'lbl_pos_desc' => 'Position Description',
 		'lbl_start' =>"Starts On",
-		'lbl_apply' =>"Apply Now",
+		'lbl_apply' =>"Application Form",
 		'lbl_training' =>"Trainings",
 		'lbl_image_count'=>':count Picture(s)',
 		'lbl_photo_gallery'=>'Photo Galleries',
@@ -42,6 +42,7 @@
 		'lbl_having_complaints_btn'=>'talk to us now',
 		'lbl_social_media_title'=>'Social Media',
 		'lbl_videos'=>'Videos',
+		'lbl_training_desc' => 'Training Description',
 
 		
 

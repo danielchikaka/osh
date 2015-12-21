@@ -14,6 +14,7 @@ class Training extends Model implements SluggableInterface {
 		 'summary_en' => 'required',
 		 'summary_sw' => 'required',
 		 'fees' => '',
+		 'start_date' => 'required',
 		 'duration' => '',
 		 'location' => 'required',
 		 'is_published' => 'required',
@@ -24,7 +25,7 @@ class Training extends Model implements SluggableInterface {
         'save_to'    => 'slug',
         'on_update'  => true, //update slug field
     );
-	protected $fillable  =  ['duration','fees','location','title_sw','title_en','content_sw','summary_en','is_published','summary_sw','content_en','user_id','slug'];
+	protected $fillable  =  [ 'duration','fees', 'start_date', 'location','title_sw','title_en','content_sw','summary_en','is_published','summary_sw','content_en','user_id','slug'];
     
 
     public static function latest($n=3){

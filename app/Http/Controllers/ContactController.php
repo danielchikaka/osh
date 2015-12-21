@@ -111,6 +111,8 @@ class ContactController extends Controller {
 				$email->to($formdata['receiver'])->subject($formdata['subject']);
 			});
 
+			dd($x);
+
 		}
 		return view('contact.contactus.success');
 	}
