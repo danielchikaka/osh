@@ -16,7 +16,7 @@ class ContactController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('auth',['except'=>['contactUs','sendMail']]);
+		$this->middleware('auth',['except'=>['contactUs','sendMail', 'sendComplaints']]);
 	}
 	/**
 	 * Display a listing of the resource.
@@ -111,11 +111,56 @@ class ContactController extends Controller {
 				$email->to($formdata['receiver'])->subject($formdata['subject']);
 			});
 
+	
+
+		}
+		return view('contact.contactus.success');
+	}
+
+
+
+	/**
+	 * display contact form
+	 */
+	public function sendComplaints(Request $request)
+	{
+		
+		$data = $request->all();
+		$rules = array(
+		 'name' => 'required',
+		 'email' => 'required',
+		 'subject' => 'required',
+		 'message' => 'required',
+		);
+		$validator = Validator::make($data,$rules);
+
+		if ($validator->fails())
+		{
+
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+		$contact = Contact::first();
+		if($contact){
+
+			$formdata = array(
+				'name' => $data['name'],
+				'email' => $data['email'],
+				'subject' => $data['subject'],
+				'text' => $data['message'],
+				'receiver' => $contact->email
+				);
+
+			$x = Mail::send('contact.contactus.show', $formdata, function($email) use ($formdata){
+				$email->from($formdata['email'], $formdata['name']);
+				$email->to($formdata['receiver'])->subject($formdata['subject']);
+			});
+
 			dd($x);
 
 		}
 		return view('contact.contactus.success');
 	}
+
 
 
 

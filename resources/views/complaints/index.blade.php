@@ -39,6 +39,8 @@
 
 
 <form action="#"  class="malalamiko">
+      {!!  Form::open(array('route' => 'contact.send-mail', 'class' => 'malalamiko')) !!}
+
 
 <p><strong>A : COMPLAINANT</strong></p> <br>
 
@@ -46,64 +48,64 @@
 
 <div class="form-group">
     <label for="first-name">First Name</label>
-   <p> <input type="text"  id="first-name"></p>
+   <p>      {!! Form::text('first-name',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
   <div class="form-group">
     <label for="middle-name">Middle Name</label>
-  <p>    <input type="text"  id="middle-name"></p>
+     <p>      {!! Form::text('middle-name',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
   <div class="form-group">
     <label for="surname">Surname</label>
-<p>    <input type="text"  id="surname"></p>
+   <p>      {!! Form::text('surname',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
   <div class="form-group">
     <label for="occupation">Occupation</label>
-<p>    <input type="text"  id="occupation"></p>
+   <p>      {!! Form::text('occupation',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
   <div class="form-group">
     <label for="title">Title</label>
- <p>   <input type="text"  id="title"></p>
+       <p>      {!! Form::text('title',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
     <div class="form-group">
     <label for="representative">Institution/Representative</label>
-<p>    <input type="text"  id="representative"></p>
+   <p>      {!! Form::text('representative',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
       <div class="form-group">
     <label for="address">Address</label>
-<p>    <input type="text"  id="address"></p>
+   <p>      {!! Form::text('address',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
 
   <div class="form-group">
     <label for="telephone">Telephone</label>
-<p>    <input type="text"  id="telephone"></p>
+   <p>      {!! Form::text('telephone',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
     <div class="form-group">
     <label for="email">Email</label>
-<p>    <input type="text"  id="email"></p>
+   <p>      {!! Form::text('email',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
 
     <div class="form-group">
     <label for="fax">Fax</label>
-<p>    <input type="text"  id="fax"></p>
+   <p>      {!! Form::text('fax',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
 <p>2. Client  Status</p>
 
 <div class="form-group">
   <label class="radio-inline">
-  <input type="radio" name="internal-external" id="internal" value="internal"> Internal Client
+  {!! Form::radio('internal-external', 'internal') !!} Internal Client
 </label>
   <label class="radio-inline">
-  <input type="radio" name="internal-external" id="external" value="external"> External Client
+    {!! Form::radio('internal-external', 'external') !!} External Client
 </label>
 </div>
 
@@ -114,19 +116,19 @@
 
 <div class="form-group">
   <label class="radio-inline">
-  <input type="radio" name="who-complaining" id="yourself" value="yourself"> Yourself
+      {!! Form::radio('who-complaining', 'yourself') !!} Yourself
 </label>
   <label class="radio-inline">
-  <input type="radio" name="who-complaining" id="your-relative" value="your-relative"> Your Relative
+        {!! Form::radio('who-complaining', 'your-relative') !!} Your Relative
 </label>
   <label class="radio-inline">
-  <input type="radio" name="who-complaining" id="representative" value="representative"> Complainant's representative
+          {!! Form::radio('who-complaining', 'representative') !!} Complainant's representative
 </label>
   <label class="radio-inline">
-  <input type="radio" name="who-complaining" id="employer" value="representative"> Complainant's Employer
+           {!! Form::radio('who-complaining', 'employer') !!} Complainant's Employer
 </label>
   <label class="radio-inline">
-  <input type="radio" name="who-complaining" id="supervisor" value="supervisor"> Complainant's Job Supervisor
+      {!! Form::radio('who-complaining', 'supervisor') !!} Complainant's Job Supervisor
 </label>
 </div>
 
@@ -135,13 +137,14 @@
 
 <div class="form-group">
   <label class="radio-inline">
-  <input type="radio" name="dis-level" id="dis-low" value="low"> Low
+        {!! Form::radio('dis-level', 'dis-level') !!} Low
+
 </label>
   <label class="radio-inline">
-  <input type="radio" name="dis-level" id="dis-average" value="average"> Average
+          {!! Form::radio('dis-level', 'average') !!} Average
 </label>
   <label class="radio-inline">
-  <input type="radio" name="dis-level" id="dis-high" value="high"> High
+            {!! Form::radio('dis-level', 'high') !!} High
 </label>
  
 </div>
@@ -154,39 +157,39 @@
 
 <div class="form-group">
     <label for="service-complained">Service Complained about</label>
-   <p> <input type="text"  id="service-complained"></p>
+      <p>      {!! Form::text('service-complained',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
 
 <div class="form-group">
     <label for="service-complained">Brief Explanation</label>
-   <p>
-   <textarea name="more-explanation"cols="30" rows="10"  width="100%"></textarea>
+      <p>      {!! Form::textarea('more-explanation',null,['id'=>'','placeholder'=>'', 'width' => '100%', 'cols' => '30', 'rows'=>'10']) !!}</p>
+
   </div>
 
   <div class="form-group">
     <label for="service-complained">Specific aspect of the complained service</label>
-   <p>
-   <textarea name="specific-aspect"cols="30" rows="10"  width="100%"></textarea>
+
+         <p>      {!! Form::textarea('specific-aspect',null,['id'=>'','placeholder'=>'', 'width' => '100%', 'cols' => '30', 'rows'=>'10']) !!}</p>
   </div>
 
   <div class="form-group">
     <label for="location">Where the incident occured?</label>
-   <p> <input type="text"  id="location"></p>
+         <p>      {!! Form::text('location',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
 
     <div class="form-group">
     <label for="occ-date">Date of ocurrence</label>
-   <p> <input type="text"  id="occ-date"></p>
+          <p>      {!! Form::text('occ-date',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
   <div class="form-group">
   <label class="radio-inline">
-  <input type="radio" name="prior-report" id="prior-before" value="reported-before"> Reported Before
+    {!! Form::radio('prior-report', 'reported-before') !!} Reported Before
 </label>
   <label class="radio-inline">
-  <input type="radio" name="prior-report" id="prior-after" value="not-reported"> Not Reported Before
+    {!! Form::radio('prior-report', 'not-reported') !!} Not Reported Before
 </label>
 </div>
 
@@ -200,7 +203,7 @@
 
 
   
-</form>
+  {!! Form::close() !!}
 
 
 
@@ -221,64 +224,64 @@
 
 <div class="form-group">
     <label for="first-name">Jina la kwanza</label>
-   <p> <input type="text"  id="first-name"></p>
+    <p>      {!! Form::text('first-name',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
   <div class="form-group">
     <label for="middle-name">Jina la kati</label>
-  <p>    <input type="text"  id="middle-name"></p>
+  <p>      {!! Form::text('middle-name',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
   <div class="form-group">
     <label for="surname">JIna la ukoo</label>
-<p>    <input type="text"  id="surname"></p>
+  <p>      {!! Form::text('surname',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
   <div class="form-group">
     <label for="occupation">Kazi</label>
-<p>    <input type="text"  id="occupation"></p>
+   <p>      {!! Form::text('occupation',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
   <div class="form-group">
     <label for="title">Cheo</label>
- <p>   <input type="text"  id="title"></p>
+  <p>      {!! Form::text('title',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
     <div class="form-group">
     <label for="representative">Taasisi/Mwakilishi wako</label>
-<p>    <input type="text"  id="representative"></p>
+   <p>      {!! Form::text('representative',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
       <div class="form-group">
     <label for="address">Anwani</label>
-<p>    <input type="text"  id="address"></p>
+   <p>      {!! Form::text('address',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
 
   <div class="form-group">
     <label for="telephone">Simu</label>
-<p>    <input type="text"  id="telephone"></p>
+   <p>      {!! Form::text('telephone',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
     <div class="form-group">
     <label for="email">Barua pepe</label>
-<p>    <input type="text"  id="email"></p>
+   <p>      {!! Form::text('email',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
 
     <div class="form-group">
     <label for="fax">Nukushi</label>
-<p>    <input type="text"  id="fax"></p>
+   <p>      {!! Form::text('fax',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
 <p>2. Hali ya mteja</p>
 
 <div class="form-group">
   <label class="radio-inline">
-  <input type="radio" name="internal-external" id="internal" value="internal"> Mteja wa ndani
+  {!! Form::radio('internal-external', 'internal') !!} Mteja wa ndani
 </label>
   <label class="radio-inline">
-  <input type="radio" name="internal-external" id="external" value="external"> Mteja wa nje
+   {!! Form::radio('internal-external', 'external') !!} Mteja wa nje
 </label>
 </div>
 
@@ -289,19 +292,19 @@
 
 <div class="form-group">
   <label class="radio-inline">
-  <input type="radio" name="who-complaining" id="yourself" value="yourself"> Mlalamikaji mwenyewe
+  {!! Form::radio('who-complaining', 'yourself') !!} Mlalamikaji mwenyewe
 </label>
   <label class="radio-inline">
-  <input type="radio" name="who-complaining" id="your-relative" value="your-relative"> Ndugu wa mlalamikaji
+   {!! Form::radio('who-complaining', 'your-relative') !!} Ndugu wa mlalamikaji
 </label>
   <label class="radio-inline">
-  <input type="radio" name="who-complaining" id="representative" value="representative"> Wakala wa mlalamikaji
+      {!! Form::radio('who-complaining', 'representative') !!} Wakala wa mlalamikaji
 </label>
   <label class="radio-inline">
-  <input type="radio" name="who-complaining" id="employer" value="representative"> Mwajiri wa mlalamikaji
+    {!! Form::radio('who-complaining', 'employer') !!} Mwajiri wa mlalamikaji
 </label>
   <label class="radio-inline">
-  <input type="radio" name="who-complaining" id="supervisor" value="supervisor"> Kiongozi wa kazi wa mlalamikaji
+    {!! Form::radio('who-complaining', 'supervisor') !!} Kiongozi wa kazi wa mlalamikaji
 </label>
 </div>
 
@@ -310,13 +313,13 @@
 
 <div class="form-group">
   <label class="radio-inline">
-  <input type="radio" name="dis-level" id="dis-low" value="low"> Chini
+  {!! Form::radio('dis-level', 'dis-level') !!} Chini
 </label>
   <label class="radio-inline">
-  <input type="radio" name="dis-level" id="dis-average" value="average"> Wastani
+ {!! Form::radio('dis-level', 'average') !!} Wastani
 </label>
   <label class="radio-inline">
-  <input type="radio" name="dis-level" id="dis-high" value="high"> Juu sana
+   {!! Form::radio('dis-level', 'high') !!} Juu sana
 </label>
  
 </div>
@@ -329,39 +332,37 @@
 
 <div class="form-group">
     <label for="service-complained">Huduma iliyolalamikiwa</label>
-   <p> <input type="text"  id="service-complained"></p>
+   <p>      {!! Form::text('service-complained',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
 
 <div class="form-group">
     <label for="service-complained">Maelezo kwa ufupi</label>
-   <p>
-   <textarea name="more-explanation"cols="30" rows="10"  width="100%"></textarea>
+     <p>      {!! Form::textarea('more-explanation',null,['id'=>'','placeholder'=>'', 'width' => '100%', 'cols' => '30', 'rows'=>'10']) !!}</p>
   </div>
 
   <div class="form-group">
     <label for="service-complained">Kasoro inayolalamikiwa</label>
-   <p>
-   <textarea name="specific-aspect"cols="30" rows="10"  width="100%"></textarea>
+          <p>      {!! Form::textarea('specific-aspect',null,['id'=>'','placeholder'=>'', 'width' => '100%', 'cols' => '30', 'rows'=>'10']) !!}</p>
   </div>
 
   <div class="form-group">
     <label for="location">Mahali tukio lilipotokea</label>
-   <p> <input type="text"  id="location"></p>
+   <p>      {!! Form::text('location',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
 
     <div class="form-group">
     <label for="occ-date">Tarehe ya tukio</label>
-   <p> <input type="text"  id="occ-date"></p>
+  <p>      {!! Form::text('occ-date',null,['id'=>'','placeholder'=>'']) !!}</p>
   </div>
 
   <div class="form-group">
   <label class="radio-inline">
-  <input type="radio" name="prior-report" id="prior-before" value="reported-before"> Umewahi kuwasilisha lalamiko hili kabla
+{!! Form::radio('prior-report', 'reported-before') !!} Umewahi kuwasilisha lalamiko hili kabla
 </label>
   <label class="radio-inline">
-  <input type="radio" name="prior-report" id="prior-after" value="not-reported"> Hujawahi kuwasilisha lalamiko hili kabla
+  {!! Form::radio('prior-report', 'not-reported') !!} Hujawahi kuwasilisha lalamiko hili kabla
 </label>
 </div>
 
@@ -375,7 +376,7 @@
 
 
   
-</form>
+  {!! Form::close() !!}
 
 
 

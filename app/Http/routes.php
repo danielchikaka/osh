@@ -120,6 +120,7 @@ Route::controllers([
 	Route::resource('contact','ContactController');
 	Route::get('contact-us',['as'=>'contact.contact-us','uses'=>'ContactController@contactUs']);
 	Route::post('contact-us',['as'=>'contact.send-mail','uses'=>'ContactController@sendMail']);
+	Route::post('send-complaints',['as'=>'contact.sendComplaints','uses'=>'ContactController@sendComplaints']);
 
 
 
