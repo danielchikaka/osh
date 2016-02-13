@@ -14,10 +14,11 @@ class Contact extends Model {
 		 'org_name_sw' => 'required',
 		 'region' => 'required',
 		 'phone_no' => 'required',
-		 'email' => 'required'
+		 'email' => 'required',
+		 'email_workplace' => 'required'
 	];
 
-	protected $fillable = ['physical_en', 'physical_sw', 'box_no_en', 'box_no_sw', 'phone_no', 'user_id','region','fax','is_published','email','org_name_en','org_name_sw'];
+	protected $fillable = ['physical_en', 'email_workplace', 'physical_sw', 'box_no_en', 'box_no_sw', 'phone_no', 'user_id','region','fax','is_published','email','org_name_en','org_name_sw'];
 
 
 

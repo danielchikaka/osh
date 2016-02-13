@@ -13,10 +13,10 @@
 
 	  <ul class="trainings-details">
 	  	<li>Duration:  {{$training->duration }}</li>
-	  	<li>{{trans('messages.lbl_start')}}: {{ date('M d , Y', strtotime($training->created_at)) }}</li>
+	  	<li>{{trans('messages.lbl_start')}}: {{ date('M d , Y', strtotime($training->start_date)) }}</li>
 	  	<li>Location: {{$training->location}}</li>
 	  	<li>Fees: {{$training->fees}} </li>
-	  	<li><a href="#">Apply Now</a></li>
+	  	<!-- <li><a href="#">Apply Now</a></li> -->
 	  </ul>
 
 	  <h4>{{trans('messages.lbl_training_desc')}}: </h4>

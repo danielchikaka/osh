@@ -50,6 +50,12 @@
           <span class='error'>{{ $errors->first('email') }}</span>
         </div> 
 
+               <div class="form-group">
+          {!! Form::label('email_workplace','Email for Workplace Registration') !!}
+          {!! Form::text('email_workplace',null,['class'=>'form-control','placeholder'=>'Enter Email']) !!}
+          <span class='error'>{{ $errors->first('email_workplace') }}</span>
+        </div> 
+
            
         <div class="form-group">
           {!! Form::label('fax','Fax') !!}

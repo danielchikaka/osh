@@ -19,6 +19,8 @@
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('admin/dist/css/skins/_all-skins.min.css')}}">
 
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
     @yield('css')
 
 <style type="text/css">

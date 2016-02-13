@@ -32,7 +32,7 @@
 		'lbl_vacancies' => 'Nafasi Za Kazi',
 		'lbl_pos_desc' => 'Maelezo ya Nafasi',
 		'lbl_start' =>"Inaanza",
-		'lbl_apply' =>"Jiunge",
+		'lbl_apply' =>"Form ya Kujiunga",
 		'lbl_training' =>"Mafunzo",
 		'lbl_image_count'=>'Picha :count',
 		'lbl_photo_gallery'=>'Maktaba ya Picha',
@@ -45,6 +45,7 @@
 		'lbl_having_complaints_btn'=>'tupatie taarifa sasa',
 		'lbl_social_media_title'=>'Mitandao ya Kijamii',
 		'lbl_videos'=>'Video',
+		'lbl_training_desc' => 'Maelezo ya Mafunzo',
 
 
 

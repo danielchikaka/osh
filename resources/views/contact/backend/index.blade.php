@@ -56,6 +56,10 @@
                           <td>Organization Email</td>
                           <td>{{$contact->email}}</td>
                         </tr>  
+                                <tr>
+                          <td>Workplace Registration Email</td>
+                          <td>{{$contact->email_workplace}}</td>
+                        </tr>  
                         <tr>
                           <td>Organization Fax</td>
                           <td>{{$contact->fax}}</td>

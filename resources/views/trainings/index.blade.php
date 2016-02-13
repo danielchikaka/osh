@@ -25,10 +25,10 @@
         <div >
           
 
-          <span class="pull-left">{{trans('messages.lbl_start')}}: {{ date('M d , Y', strtotime($training->created_at)) }}</span>
+          <span class="pull-left">{{trans('messages.lbl_start')}}: {{ date('M d , Y', strtotime($training->start_date)) }}</span>
 
-          <span class="pull-right"><a href="#">{{trans('messages.lbl_apply') }}</a></span>
-
+<!--           <span class="pull-right"><a href="#">{{trans('messages.lbl_apply') }}</a></span>
+ -->
         </div>
 
           <a href="{{URL::route('trainings.show',$training->slug)}}">{{ trans('messages.lbl_continue') }}  &rarr; </a>
