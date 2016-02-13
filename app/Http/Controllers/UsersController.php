@@ -10,6 +10,18 @@ use Hash;
 use Auth;
 class UsersController extends Controller {
 
+	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		$this->middleware('auth',['except'=>['show']]);
+	}
+
+
+
 	public function changePasswordForm(){
 		return view('auth.changepassword');
 	}
@@ -29,8 +41,9 @@ class UsersController extends Controller {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 		if(Hash::check($request->old_password, Auth::user()->getAuthPassword())){
+			$user= Auth::user();
 			$user->password = Hash::make($request->password);
-			  $validation->getMessageBag()->add('old_password', 'oldPassword not valid');
+			  $validator->getMessageBag()->add('old_password', 'oldPassword not valid');
 		$validator = Validator::make($data,$rules);
 
 		if ($validator->fails())
@@ -40,7 +53,7 @@ class UsersController extends Controller {
 		}
 			// save the new password
 			if($user->save()) {
-				return Redirect::route('home')
+				return Redirect::to('home')
 						->with('global', 'Your password has been changed.');
 			}
 		} else {

@@ -180,6 +180,11 @@
               <a href="{{URL::route('relatedlinks.admin')}}">
                 <i class="fa fa-fw fa-link"></i> <span>Related Links</span>
               </a>
+            </li>              
+            <li>
+              <a href="{{URL::to('auth/changepassword')}}">
+                <i class="fa fa-fw fa-link"></i> <span>Change Password</span>
+              </a>
             </li>            
  
 <!-- 

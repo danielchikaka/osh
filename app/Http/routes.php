@@ -18,10 +18,10 @@ Route::get('home', 'HomeController@admin');
 Route::get('auth/changepassword', 'UsersController@changePasswordForm');
 Route::post('auth/changepassword', 'UsersController@changePassword');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+	Route::controllers([
+		'auth' => 'Auth\AuthController',
+		'password' => 'Auth\PasswordController',
+	]);
 
 	Route::resource('publications','PublicationsController');
 	Route::get('admin-publications',['as'=>'publications.admin','uses'=>'PublicationsController@admin']);
